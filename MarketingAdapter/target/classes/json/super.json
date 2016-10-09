@@ -1,0 +1,19 @@
+{
+  "deals" : [
+    {
+      "title": "Buy 2 get 1 free",
+      "description": "Buy 2 cleaning products get 1 free",
+      "imageUrl": "https://github.com/mfpdev/images/blob/master/super1.png"
+    },
+    {
+      "title": "Get 30% off",
+      "description": "Get 30% off on all canned goods",
+      "imageUrl": "https://github.com/mfpdev/images/blob/master/super2.png"
+    },
+    {
+      "title": "Buy 1 get 1 free",
+      "description": "Buy 1 laundry detergent get 1 free",
+      "imageUrl": "https://github.com/mfpdev/images/blob/master/super3.png"
+    }
+  ]
+}

@@ -91,13 +91,11 @@ extension CardsViewController: KolodaViewDataSource {
         titleLabel.text = "cards_\(index + 1)"
         var uiImage = UIImage (named: "cards_\(index + 1)")
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            let url = NSURL(string: "https://www.partycity.com/images/set_c/en_us/emails-pc/11-11-31-halloween-clearance-email/coupon-PCR3SP_v2.jpg")
+        //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            let url = NSURL(string: "https://raw.githubusercontent.com/mfpdev/images/master/gas-station2.png    ")
             let data = NSData(contentsOfURL: url!)
-            dispatch_async(dispatch_get_main_queue(), {
-                uiImage = UIImage(data: data!)
-            });
-        });
+             uiImage = UIImage(data: data!)
+       // });
         
        
         //return UIImageView(image: UIImage(data: data!)!)

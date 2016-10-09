@@ -1,0 +1,14 @@
+{
+  "deals" : [
+    {
+      "title": "Buy 10 Get 1",
+      "description": "Wash your car 10 times and get 1 was free",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/gas-station1.png"
+    },
+    {
+      "title": "Get 10% off",
+      "description": "Get 10% off in our gas stations for display this coupon",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/gas-station2.png"
+    }
+  ]
+}
