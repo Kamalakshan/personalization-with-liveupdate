@@ -4,25 +4,29 @@
       "category": "gas-station",
       "longitude": -71.954515,
       "latitude" : 41.035935,
-      "description": "Gas station near Montauk, Long Island, NY"
+      "description": "Gas station near Montauk, Long Island, NY",
+      "umbrellaDeal" : true
     },
     {
       "category": "super",
       "longitude": -73.993607,
       "latitude" : 40.750638,
-      "description": "Supermarket near the Madison Square Garden"
+      "description": "Supermarket near the Madison Square Garden",
+      "umbrellaDeal" : false
     },
     {
       "category": "my-super",
       "longitude": -74.011459,
       "latitude" : 40.706929,
-      "description": "Small super near the New York Stock Exchange"
+      "description": "Small super near the New York Stock Exchange",
+      "umbrellaDeal" : false
     },
     {
       "category": "pharmacy",
       "longitude": -73.985710,
       "latitude" : 40.74855,
-      "description": "Pharmacy station near the Empire State Building"
+      "description": "Pharmacy station near the Empire State Building",
+      "umbrellaDeal" : true
     }
   ]
 }

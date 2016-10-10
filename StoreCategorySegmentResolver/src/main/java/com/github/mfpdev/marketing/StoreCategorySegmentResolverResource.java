@@ -21,6 +21,9 @@ import com.ibm.json.java.JSONArray;
 import com.ibm.json.java.JSONObject;
 import com.ibm.mfp.adapter.api.ConfigurationAPI;
 import com.ibm.mfp.adapter.api.OAuthSecurity;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.JsonPath;
+import com.jayway.jsonpath.ReadContext;
 import io.swagger.annotations.Api;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -42,6 +45,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,8 +53,8 @@ import java.util.logging.Logger;
 @Api(value = "Store category resolver adapter")
 @Path("/")
 public class StoreCategorySegmentResolverResource {
-	private static final Gson gson = new Gson();
-	private static final Logger logger = Logger.getLogger(ResolverAdapterData.class.getName());
+    private static final Gson gson = new Gson();
+    private static final Logger logger = Logger.getLogger(ResolverAdapterData.class.getName());
     private static final String DEFAULT_SEGMENT = "default";
     private static int EARTH_RADIUS = 6371; // Radius of the earth in km
 
@@ -78,24 +82,25 @@ public class StoreCategorySegmentResolverResource {
     }
 
     @POST
-	@Path("segment")
-	@Produces("text/plain;charset=UTF-8")
-	@OAuthSecurity(scope = "configuration-user-login")
-	public String getSegment(String body) throws Exception {
-		ResolverAdapterData data = gson.fromJson(body, ResolverAdapterData.class);
+    @Path("segment")
+    @Produces("text/plain;charset=UTF-8")
+    @OAuthSecurity(scope = "configuration-user-login")
+    public String getSegment(String body) throws Exception {
+        ResolverAdapterData data = gson.fromJson(body, ResolverAdapterData.class);
 
-		// Get the authenticatedUser object
+        // Get the authenticatedUser object
         if (data.getQueryArguments().containsKey("longitude") && data.getQueryArguments().containsKey("latitude")) {
             List<String> longitude = data.getQueryArguments().get("longitude");
             List<String> latitude = data.getQueryArguments().get("latitude");
 
             return getStoreCategory (Double.valueOf(longitude.get(0)), Double.valueOf(latitude.get(0)));
         }
-		return DEFAULT_SEGMENT;
-	}
+        return DEFAULT_SEGMENT;
+    }
 
-	private String getStoreCategory (double longitude, double latitude) {
+    private String getStoreCategory (double longitude, double latitude) {
         String minDistCategory = DEFAULT_SEGMENT;
+        boolean isIncludeUmbrellaDeal = false;
 
         try {
             InputStream stream = this.getClass().getResource("/json/stores.json").openStream();
@@ -114,44 +119,53 @@ public class StoreCategorySegmentResolverResource {
                 if (dist < minDist) {
                     minDist = dist;
                     minDistCategory = (String) storeJson.get("category");
+                    isIncludeUmbrellaDeal = (Boolean) storeJson.get("umbrellaDeal");
                 }
-                isGoingToBeRainSoon(longitude, latitude);
             }
 
         } catch (Exception e) {
             logger.log(Level.WARNING, "Cannot load stores.json" + e.getMessage(), e);
         }
 
-	    return minDistCategory;
-	}
+        if (isIncludeUmbrellaDeal && isRainy(longitude, latitude)) {
+            return minDistCategory + "-rainy";
+        } else {
+            return minDistCategory;
+        }
 
-	private double distance(double lon1, double lat1, double lon2, double lat2) {
-		double dLat = Math.toRadians(lat2 - lat1);  // Javascript functions in radians
-		double dLon = Math.toRadians(lon2-lon1);
-		double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                   Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
-                   Math.sin(dLon/2) * Math.sin(dLon/2);
-		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-		return EARTH_RADIUS * c; // Distance in km
-	}
-
-    private boolean isGoingToBeRainSoon(double longitude, double latitude) {
-        HttpGet httpget;
-        String username = configurationAPI.getPropertyValue("twcserviceUsername");
-        String password = configurationAPI.getPropertyValue("twcservicePassword");
-        httpget = new HttpGet("https://"+ username + ":" + password + "@twcservice.mybluemix.net/api/weather/v1/geocode/" + latitude + "/" + longitude + "/observations.json");
-        JSONObject weatherForecast = getJSONObjectFromRequest(httpget);
-
-        return true;
     }
 
+    private double distance(double lon1, double lat1, double lon2, double lat2) {
+        double dLat = Math.toRadians(lat2 - lat1);  // Javascript functions in radians
+        double dLon = Math.toRadians(lon2-lon1);
+        double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(dLon/2) * Math.sin(dLon/2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return EARTH_RADIUS * c; // Distance in km
+    }
 
-    /**
-     * Return JSON object from facebook graph API
-     *
-     * @param request - the request
-     * @return JSONObJSONObjectject response
-     */
+    private boolean isRainy(double longitude, double latitude) {
+
+        String username = configurationAPI.getPropertyValue("twcserviceUsername");
+        String password = configurationAPI.getPropertyValue("twcservicePassword");
+        HttpGet httpRequest = new HttpGet("https://" + username + ":" + password + "@twcservice.mybluemix.net/api/weather/v1/geocode/" + latitude + "/" + longitude + "/observations.json");
+
+        JSONObject json = getJSONObjectFromRequest(httpRequest);
+
+        Long weatherCode = -1l;
+
+        if (json != null && json.containsKey("observation")) {
+            weatherCode = (Long) ((JSONObject) json.get("observation")).get("wx_icon");
+        }
+        //For all code see https://new-console.ng.bluemix.net/docs/services/Weather/weather_rest_apis.html#icon_code_images
+        return (weatherCode > 2 && weatherCode < 13 ||
+                weatherCode > 37 && weatherCode < 41 ||
+                weatherCode == 35 ||
+                weatherCode == 45 ||
+                weatherCode == 47);
+    }
+
     private JSONObject getJSONObjectFromRequest(HttpUriRequest request) {
         JSONObject jsonObject = null;
         try {
@@ -162,7 +176,5 @@ public class StoreCategorySegmentResolverResource {
         }
         return jsonObject;
     }
-
-
 }
 

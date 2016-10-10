@@ -12,12 +12,13 @@
 		44B5EC291B660C8500895E3D /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B5EC281B660C8500895E3D /* CustomOverlayView.swift */; };
 		44B5EC2B1B660C9100895E3D /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B5EC2A1B660C9100895E3D /* CustomOverlayView.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		97D0144823232C62F99697CA /* Pods_Koloda_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BBBE07C90EB442B389AD64B /* Pods_Koloda_Example.framework */; };
 		D4A062071DA67EF200E36C66 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A062061DA67EF200E36C66 /* CardsViewController.swift */; };
+		D4A062091DAB727200E36C66 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A062081DAB727200E36C66 /* CoreLocation.framework */; };
+		D4A0620B1DAB75E400E36C66 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4A0620A1DAB75E400E36C66 /* mfpclient.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +31,13 @@
 		607FACD01AFB9204008FA782 /* Koloda_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koloda_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D49DF7A94234ED7FFDBC492B /* Pods-Koloda_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koloda_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koloda_Example/Pods-Koloda_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D4A062061DA67EF200E36C66 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		D4A062081DAB727200E36C66 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D4A0620A1DAB75E400E36C66 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A062091DAB727200E36C66 /* CoreLocation.framework in Frameworks */,
 				97D0144823232C62F99697CA /* Pods_Koloda_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +56,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				D4A0620A1DAB75E400E36C66 /* mfpclient.plist */,
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACD11AFB9204008FA782 /* Products */,
 				85B3405D0F2A73D9A709B3FA /* Frameworks */,
@@ -72,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				D4A062061DA67EF200E36C66 /* CardsViewController.swift */,
 				446BFD081CB0184A00619E78 /* BackgroundKolodaAnimator.swift */,
 				440FB7661B51499A009FC9FC /* CustomKolodaView.swift */,
@@ -107,6 +110,7 @@
 		85B3405D0F2A73D9A709B3FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4A062081DAB727200E36C66 /* CoreLocation.framework */,
 				0BBBE07C90EB442B389AD64B /* Pods_Koloda_Example.framework */,
 			);
 			name = Frameworks;
@@ -177,6 +181,7 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				44B5EC2B1B660C9100895E3D /* CustomOverlayView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				D4A0620B1DAB75E400E36C66 /* mfpclient.plist in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A062071DA67EF200E36C66 /* CardsViewController.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				446BFD091CB0184A00619E78 /* BackgroundKolodaAnimator.swift in Sources */,
 				440FB7671B51499A009FC9FC /* CustomKolodaView.swift in Sources */,
 				44B5EC291B660C8500895E3D /* CustomOverlayView.swift in Sources */,
@@ -356,10 +360,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Koloda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yalantis.Koloda-Example";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.mfpdev.myChain;
+				PRODUCT_NAME = Koloda_Example;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(SRC_ROOT)";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -371,10 +377,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Koloda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yalantis.Koloda-Example";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.mfpdev.myChain;
+				PRODUCT_NAME = Koloda_Example;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(SRC_ROOT)";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;

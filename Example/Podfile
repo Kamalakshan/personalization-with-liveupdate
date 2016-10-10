@@ -2,7 +2,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'Koloda_Example' do
-  pod "Koloda"
+  pod 'Koloda'
+  pod 'IBMMobileFirstPlatformFoundation'
+  pod 'IBMMobileFirstPlatformFoundationLiveUpdate'
 end
 
 post_install do |installer|

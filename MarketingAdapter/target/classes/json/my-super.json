@@ -3,17 +3,17 @@
     {
       "title": "Get 30% off",
       "description": "Get 30% off on all vegetables",
-      "imageUrl": "https://github.com/mfpdev/images/blob/master/my-super1.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/my-super1.png"
     },
     {
       "title": "Get 30% off",
       "description": "Get 30% on all gummy candies",
-      "imageUrl": "https://github.com/mfpdev/images/blob/master/my-super2.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/my-super2.png"
     },
     {
       "title": "Get 20% off",
       "description": "Get 20% on all chocolate candies",
-      "imageUrl": "https://github.com/mfpdev/images/blob/master/my-super3.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/my-super3.png"
     }
   ]
 }

@@ -9,6 +9,9 @@
 import UIKit
 import Koloda
 import pop
+import IBMMobileFirstPlatformFoundationLiveUpdate
+import IBMMobileFirstPlatformFoundation
+import CoreLocation
 
 private let numberOfCards: UInt = 5
 private let frameAnimationSpringBounciness: CGFloat = 9
@@ -16,11 +19,15 @@ private let frameAnimationSpringSpeed: CGFloat = 16
 private let kolodaCountOfVisibleCards = 2
 private let kolodaAlphaValueSemiTransparent: CGFloat = 0.1
 
-class CardsViewController: UIViewController {
+class CardsViewController: UIViewController, CLLocationManagerDelegate{
 
     weak var kolodaView: CustomKolodaView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    var dealsArray = NSArray()
+    var cachedImages = NSMutableDictionary()
+    
+     private var locationManager = CLLocationManager()
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -28,9 +35,11 @@ class CardsViewController: UIViewController {
         kolodaView.alphaValueSemiTransparent = kolodaAlphaValueSemiTransparent
         kolodaView.countOfVisibleCards = kolodaCountOfVisibleCards
         kolodaView.delegate = self
-        kolodaView.dataSource = self
         kolodaView.animator = CardsAnimator(koloda: kolodaView)
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
     }
     
@@ -44,8 +53,37 @@ class CardsViewController: UIViewController {
         kolodaView?.swipe(SwipeResultDirection.Right)
     }
     
-    @IBAction func undoButtonTapped() {
-        kolodaView?.revertAction()
+    @IBAction func refreshButtonTapped() {
+        fetchCards()
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print ("Error updating location")
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
+    func fetchCards () {
+        let currentLocation = locationManager.location!
+        
+        print ("longitude - \(currentLocation.coordinate.longitude), latitude - \(currentLocation.coordinate.latitude)")
+        LiveUpdateManager.sharedInstance.obtainConfiguration(["longitude" : "\(currentLocation.coordinate.longitude)", "latitude" : "\(currentLocation.coordinate.latitude)"]) { (configuration, error) in
+            let adapterURL = configuration?.getProperty("dealsAdapterURL");
+            let resourseRequest = WLResourceRequest(URL: NSURL(string:adapterURL!)!, method:"GET")
+            resourseRequest.sendWithCompletionHandler({ (response, error) -> Void in
+                if let json = response.responseJSON {
+                    
+                    self.dealsArray = response.responseJSON["deals"] as! NSArray
+                    if self.kolodaView.dataSource == nil {
+                        self.kolodaView.dataSource = self
+                    }
+                    self.kolodaView.resetCurrentCardIndex()
+                    print (self.dealsArray)
+                }
+            })
+        }
     }
 }
 
@@ -57,7 +95,7 @@ extension CardsViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
+       // UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
     }
     
     func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {
@@ -69,6 +107,8 @@ extension CardsViewController: KolodaViewDelegate {
     }
     
     func kolodaShouldTransparentizeNextCard(koloda: KolodaView) -> Bool {
+        self.titleLabel.text = self.dealsArray[koloda.currentCardIndex]["title"] as? String
+        self.descriptionLabel.text = self.dealsArray[koloda.currentCardIndex]["description"] as? String
         return true
     }
     
@@ -84,21 +124,21 @@ extension CardsViewController: KolodaViewDelegate {
 extension CardsViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(koloda: KolodaView) -> UInt {
-        return numberOfCards
+        return UInt(dealsArray.count);
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        titleLabel.text = "cards_\(index + 1)"
-        var uiImage = UIImage (named: "cards_\(index + 1)")
+        let index = Int(index)
         
-        //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            let url = NSURL(string: "https://raw.githubusercontent.com/mfpdev/images/master/gas-station2.png    ")
-            let data = NSData(contentsOfURL: url!)
-             uiImage = UIImage(data: data!)
-       // });
         
-       
-        //return UIImageView(image: UIImage(data: data!)!)
+        let urlString = dealsArray[index]["imageUrl"]! as! String
+        var data = cachedImages.valueForKey(urlString)
+        if data == nil {
+            let url = NSURL(string: urlString)
+            data = NSData(contentsOfURL: url!)
+            cachedImages.setValue(data, forKey: urlString)
+        }
+        let uiImage = UIImage(data: data as! NSData)!
         return UIImageView(image: uiImage)
     }
     
