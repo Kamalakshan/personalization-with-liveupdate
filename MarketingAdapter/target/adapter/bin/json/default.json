@@ -6,6 +6,11 @@
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super1.png"
     },
     {
+      "title": "Buy 10 Get 1",
+      "description": "Wash your car 10 times and get 1 was free",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/gas-station1.png"
+    },
+    {
       "title": "Get 30% off",
       "description": "Get 30% off on all canned goods",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super2.png"
@@ -14,6 +19,21 @@
       "title": "Buy 1 get 1 free",
       "description": "Buy 1 laundry detergent get 1 free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super3.png"
+    },
+    {
+      "title": "Get 10% off",
+      "description": "Get 10% off in our gas stations for display this coupon",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/gas-station2.png"
+    },
+    {
+      "title": "Get 30% off",
+      "description": "Get 30% on all gummy candies",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/my-super2.png"
+    },
+    {
+      "title": "Get 20% off",
+      "description": "Get 20% on all chocolate candies",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/my-super3.png"
     }
   ]
 }

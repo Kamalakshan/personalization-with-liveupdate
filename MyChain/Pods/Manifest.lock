@@ -1,0 +1,22 @@
+PODS:
+  - IBMMobileFirstPlatformFoundation (8.0.2016070718)
+  - IBMMobileFirstPlatformFoundationLiveUpdate (8.0.2016070421):
+    - IBMMobileFirstPlatformFoundation (~> 8.0)
+  - Koloda (3.1.2):
+    - pop (~> 1.0)
+  - pop (1.0.9)
+
+DEPENDENCIES:
+  - IBMMobileFirstPlatformFoundation
+  - IBMMobileFirstPlatformFoundationLiveUpdate
+  - Koloda
+
+SPEC CHECKSUMS:
+  IBMMobileFirstPlatformFoundation: adfc8b080dcb484bc49d37a97863b706f0fb31cb
+  IBMMobileFirstPlatformFoundationLiveUpdate: 709bb176afab9634bb478afab22f303999d27986
+  Koloda: 5aee353329cd1605540f1215a4c1975481dc7a37
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+
+PODFILE CHECKSUM: e7c14835d0751061c2d2bc0d9ba8671d419322c9
+
+COCOAPODS: 1.0.1
