@@ -26,7 +26,7 @@
       "longitude": -73.985710,
       "latitude" : 40.74855,
       "description": "Pharmacy station near the Empire State Building",
-      "umbrellaDeal" : true
+      "umbrellaDeal" : false
     }
   ]
 }

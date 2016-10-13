@@ -36,6 +36,10 @@
 		D4A0624D1DAF53E500E36C66 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D4A062541DAF53F800E36C66 /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		D4A062561DAF550A00E36C66 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
+		D4B2264E1DAF70B800FCD77C /* Pharmacy near the Empire State Building.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Pharmacy near the Empire State Building.gpx"; sourceTree = "<group>"; };
+		D4B226501DAF713E00FCD77C /* Supermarket new the Madison Square Garden.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Supermarket new the Madison Square Garden.gpx"; sourceTree = "<group>"; };
+		D4B226511DAF716E00FCD77C /* Small supermarket near the New York Stock Exchange.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Small supermarket near the New York Stock Exchange.gpx"; sourceTree = "<group>"; };
+		D4B226521DAF71AF00FCD77C /* Gas station near Montauk, Long Island.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Gas station near Montauk, Long Island.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		D4A0622A1DAF536900E36C66 = {
 			isa = PBXGroup;
 			children = (
+				D4B2264F1DAF710C00FCD77C /* locations */,
 				D4A062561DAF550A00E36C66 /* mfpclient.plist */,
 				D4A062351DAF536900E36C66 /* MyChain */,
 				D4A062341DAF536900E36C66 /* Products */,
@@ -101,6 +106,17 @@
 				D4A062421DAF536900E36C66 /* Info.plist */,
 			);
 			path = MyChain;
+			sourceTree = "<group>";
+		};
+		D4B2264F1DAF710C00FCD77C /* locations */ = {
+			isa = PBXGroup;
+			children = (
+				D4B2264E1DAF70B800FCD77C /* Pharmacy near the Empire State Building.gpx */,
+				D4B226501DAF713E00FCD77C /* Supermarket new the Madison Square Garden.gpx */,
+				D4B226511DAF716E00FCD77C /* Small supermarket near the New York Stock Exchange.gpx */,
+				D4B226521DAF71AF00FCD77C /* Gas station near Montauk, Long Island.gpx */,
+			);
+			name = locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
