@@ -16,6 +16,7 @@
 
 import UIKit
 import Koloda
+import IBMMobileFirstPlatformFoundation
 
 private let overlayRightImageName = "overlay_like"
 private let overlayLeftImageName = "overlay_skip"
@@ -41,7 +42,6 @@ class CustomOverlayView: OverlayView {
             default:
                 overlayImageView.image = nil
             }
-            
         }
     }
 

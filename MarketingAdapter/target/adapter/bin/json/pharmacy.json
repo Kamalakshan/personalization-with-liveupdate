@@ -10,5 +10,5 @@
       "description": "Get 15% on all perfumes",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/pharmacy2.png"
     }
-  ]
+  ], "category" : "pharmacy"
 }

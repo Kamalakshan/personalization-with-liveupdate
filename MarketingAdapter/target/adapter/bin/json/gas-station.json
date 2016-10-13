@@ -10,5 +10,5 @@
       "description": "Get 10% off in our gas stations for display this coupon",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/gas-station2.png"
     }
-  ]
+  ] , "category" : "gas-station"
 }

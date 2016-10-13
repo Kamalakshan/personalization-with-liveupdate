@@ -32,6 +32,7 @@ class CardsViewController: UIViewController, CLLocationManagerDelegate{
     weak var kolodaView: CustomKolodaView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    var currentCategory : String!
     var dealsArray = NSArray()
     var cachedImages = NSMutableDictionary()
     @IBOutlet weak var activiityIndicator: UIActivityIndicatorView!
@@ -58,10 +59,15 @@ class CardsViewController: UIViewController, CLLocationManagerDelegate{
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Left)
+        WLAnalytics.sharedInstance().log("skip-deal", withMetadata: ["deal": titleLabel.text!, "skip": 1, "category": currentCategory]);
+        WLAnalytics.sharedInstance().send();
+        
     }
     
     @IBAction func rightButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Right)
+        WLAnalytics.sharedInstance().log("like-deal", withMetadata: ["deal": titleLabel.text!, "like": 1, "category": currentCategory]);
+        WLAnalytics.sharedInstance().send();
     }
     
     @IBAction func refreshButtonTapped() {
@@ -102,6 +108,7 @@ class CardsViewController: UIViewController, CLLocationManagerDelegate{
                     if self.kolodaView.dataSource == nil {
                         self.kolodaView.dataSource = self
                     }
+                    self.currentCategory = json["category"] as! String
                     self.kolodaView.resetCurrentCardIndex()
                     print (self.dealsArray)
                     self.kolodaView.hidden = false
@@ -156,7 +163,7 @@ extension CardsViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-       // UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
+       //UIApplication.sharedApplication().openURL(NSURL(string: self.dealsArray[koloda.currentCardIndex]["dealURL"] as! String)!)
     }
     
     func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {

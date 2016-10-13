@@ -64,7 +64,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../Empire State Building.gpx"
+         identifier = "../Supermarket new the Madison Square Garden.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

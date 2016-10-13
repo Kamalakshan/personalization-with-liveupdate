@@ -15,5 +15,5 @@
       "description": "Buy 1 laundry detergent get 1 free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super3.png"
     }
-  ]
+  ], "category" : "super"
 }
