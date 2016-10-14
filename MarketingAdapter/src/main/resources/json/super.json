@@ -3,17 +3,17 @@
     {
       "title": "Buy 2 get 1 free",
       "description": "Buy 2 cleaning products get 1 free",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super1.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super1.png"
     },
     {
       "title": "Get 30% off",
       "description": "Get 30% off on all canned goods",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super2.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super2.png"
     },
     {
       "title": "Buy 1 get 1 free",
       "description": "Buy 1 laundry detergent get 1 free",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/super3.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super3.png"
     }
   ], "category" : "super"
 }
