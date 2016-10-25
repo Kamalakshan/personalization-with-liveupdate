@@ -9,7 +9,7 @@ The sample allows customers to get offers (The UX is like in the [Tinder] (https
 * pharmacy
 * gas station
 
-Each time a customer is near one of the businesses above, he gets card deals relevant to that location.  In addition, depending on weather at that location (using the `Weather Company Data` service), the customer will gets deals relevant for the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy,` so that if it is raining (detected with the `Weather Company Data`), the gas station will offer an umbrella deal.
+Each time a customer is near one of the businesses above, he gets deals relevant to that location.  In addition, depending on weather at that location (using the `Weather Company Data` service), the customer will gets deals relevant for the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy,` so that if it is raining (detected with the `Weather Company Data`), the gas station will offer an umbrella deal.
 
 ### Prerequisites
 1. [Installed Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
