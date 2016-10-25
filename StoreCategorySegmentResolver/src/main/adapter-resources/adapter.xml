@@ -24,6 +24,6 @@
 
 	<JAXRSApplicationClass>com.github.mfpdev.marketing.StoreCategorySegmentResolverApplication</JAXRSApplicationClass>
 	<property name="maxDistanceFromStoreInKM" defaultValue="0.3" description="Maximum distance from store"/>
-	<property name="twcserviceUsername" defaultValue="8642fd4a-7a71-4398-8256-e6e7d9ce819f"/>
-	<property name="twcservicePassword" defaultValue="5Eg5lIg7mH"/>
+	<property name="twcserviceUsername" defaultValue=""/>
+	<property name="twcservicePassword" defaultValue=""/>
 </mfp:adapter>

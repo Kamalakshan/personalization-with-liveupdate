@@ -3,12 +3,12 @@
     {
       "title": "Buy 2 get 1 free",
       "description": "Buy 2 perfumes get 1 free",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/pharmacy1.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/pharmacy1.png"
     },
     {
       "title": "Get 15% off",
       "description": "Get 15% on all perfumes",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/images/master/pharmacy2.png"
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/pharmacy2.png"
     }
   ], "category" : "pharmacy"
 }
