@@ -2,7 +2,7 @@
 
 The purpose of the sample is to show how you can achieve Real-time Personalization in your app leverging the MobileFirst Foundation Live Update feature.
 
-The sample allows customers to get offers and deals on cards (The UX is like in [Tinder] (https://en.wikipedia.org/wiki/Tinder_(app) app) based on their current location and the current weather conditions. It simulates an app of a credit card company that has partnerships with a variety of business. In this sample there are 4 types of businesses:
+The sample allows customers to get offers (The UX is like in the [Tinder] (https://en.wikipedia.org/wiki/Tinder_(app) app) app, based on their current location and the current weather conditions. It simulates an app of a credit card company that has partnerships with a variety of business. In this sample there are 4 types of businesses:
 
 * supermarket
 * small supermarket
