@@ -1,19 +1,19 @@
 {
   "deals" : [
     {
-      "title": "Get free umbrella",
-      "description": "Receive an umbrella for a gas refill above $20US",
+      "title": "Get a free umbrella",
+      "description": "Get a free umbrella when you fill up gas for more than 20$",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/umbrella1.png"
     },
     {
-      "title": "Buy 10 Get 1",
-      "description": "Wash your car 10 times and get 1 was free",
+      "title": "Get a free car wash",
+      "description": "Wash your car 10 times and get 1 wash for free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/gas-station1.png"
     },
     {
       "title": "Get 10% off",
-      "description": "Get 10% off in our gas stations for display this coupon",
+      "description": "Get 10% off on your next gas purchase",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/gas-station2.png"
     }
-  ], "category" : "gas-station-rainy"
+  ] , "category" : "gas-station-rainy"
 }

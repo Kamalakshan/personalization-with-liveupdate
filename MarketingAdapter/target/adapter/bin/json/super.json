@@ -2,7 +2,7 @@
   "deals" : [
     {
       "title": "Buy 2 get 1 free",
-      "description": "Buy 2 cleaning products get 1 free",
+      "description": "Buy 2 cleaning products, get 1 free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super1.png"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "title": "Buy 1 get 1 free",
-      "description": "Buy 1 laundry detergent get 1 free",
+      "description": "Buy 1 laundry detergent, get 1 free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super3.png"
     }
   ], "category" : "super"

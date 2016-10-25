@@ -1,29 +1,9 @@
 {
   "deals" : [
     {
-      "title": "Buy 2 get 1 free",
-      "description": "Buy 2 cleaning products get 1 free",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super1.png"
-    },
-    {
-      "title": "Buy 10 Get 1",
-      "description": "Wash your car 10 times and get 1 was free",
+      "title": "Get a free car wash",
+      "description": "Wash your car 10 times and get 1 wash for free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/gas-station1.png"
-    },
-    {
-      "title": "Get 30% off",
-      "description": "Get 30% off on all canned goods",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super2.png"
-    },
-    {
-      "title": "Buy 1 get 1 free",
-      "description": "Buy 1 laundry detergent get 1 free",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super3.png"
-    },
-    {
-      "title": "Get 10% off",
-      "description": "Get 10% off in our gas stations for display this coupon",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/gas-station2.png"
     },
     {
       "title": "Get 30% off",
@@ -31,9 +11,14 @@
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/my-super2.png"
     },
     {
-      "title": "Get 20% off",
-      "description": "Get 20% on all chocolate candies",
-      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/my-super3.png"
+      "title": "Get 15% off",
+      "description": "Get 15% on all perfumes",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/pharmacy2.png"
+    },
+    {
+      "title": "Get 30% off",
+      "description": "Get 30% off on all canned goods",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/super2.png"
     }
   ], "category" : "default"
 }
