@@ -1,6 +1,6 @@
 # Real-time Personalization with Live Update
 
-The purpose of the sample is to show you to use Live Update for Real-time Personalization.
+The purpose of the sample is to show how can you to use Live Update for Real-time Personalization.
 
 The sample allows customers to get deals card (The UX is like in  [Tinder](https://en.wikipedia.org/wiki/Tinder_(app) app) based on location and weather. It simulate an app of chain store which has 4 types of stores:
 
@@ -9,7 +9,7 @@ The sample allows customers to get deals card (The UX is like in  [Tinder](https
 * pharmacy
 * gas station
 
-Each time customer is near one of the store category above he get's relevant card deals.  In addition depends on weather on specific location (using the `Weather Company Data` service), the customer will gets deals which relevant to the current weather.
+Each time customer is near one of the store category above he get's relevant card deals.  In addition depends on weather on specific location (using the `Weather Company Data` service), the customer will gets deals which relevant to the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy` so in case of rain (detecting with the `Weather Company Data`), the gas station will offer an umbrella deal.
 
 ### Prerequisites
 1. [Installed Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
@@ -89,6 +89,7 @@ Each time customer is near one of the store category above he get's relevant car
     ![Location Based](./images/locationBased.png)
 
 
+
 ### Live Update configurations options
 
 * Summary tables showing the options available for this application:
@@ -101,7 +102,7 @@ Each time customer is near one of the store category above he get's relevant car
 
 ### Using Analytics
 
-  * After using the app for a while you go to the [MobileFirst Analytics Console](http://localhost:9080/analytics/console/dashboard) and build your custom charts like below:
+  * After using the app for a while you can go to the [MobileFirst Analytics Console](http://localhost:9080/analytics/console/dashboard) and build your custom charts like the one below:
   ![Scope Mapping](./images/analytics.png)
 
 ### External dependencies frameworks used in the app
