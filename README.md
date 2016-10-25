@@ -72,7 +72,7 @@ Each time customer is near one of the store category above he get's relevant car
 >Note: if you are using windows you need to have a bash environment installed.
 
 - Security configuration
-  * From [MobileFirst Operations console](http://localhost:9080/mfpconsole) go to **Applications->CouponsApp->iOS->Security(Tab)**. In `Scope-Elements Mapping` map scope `configuration-user-login` to empty(default scope).  
+  * From [MobileFirst Operations console](http://localhost:9080/mfpconsole) go to **Applications->CouponsApp->iOS->Security(Tab)**. In `Scope-Elements Mapping` map scope `configuration-user-login` to `empty` (default scope).  
   ![Scope Mapping](./images/scopeMapping.png)
 
 - Create `Weather Company Data` service
