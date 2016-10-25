@@ -1,15 +1,15 @@
 # Real-time Personalization with Live Update
 
-The purpose of the sample is to show how can you to use Live Update for Real-time Personalization.
+The purpose of the sample is to show how you can achieve Real-time Personalization in your app leverging the MobileFirst Foundation Live Update feature.
 
-The sample allows customers to get deals card (The UX is like in  [Tinder](https://en.wikipedia.org/wiki/Tinder_(app) app) based on location and weather. It simulate an app of chain store which has 4 types of stores:
+The sample allows customers to get offers and deals on cards (The UX is like in [Tinder] (https://en.wikipedia.org/wiki/Tinder_(app) app) based on their current location and the current weather conditions. It simulates an app of a credit card company that has partnerships with a variety of business. In this sample there are 4 types of businesses:
 
 * supermarket
 * small supermarket
 * pharmacy
 * gas station
 
-Each time customer is near one of the store category above he get's relevant card deals.  In addition depends on weather on specific location (using the `Weather Company Data` service), the customer will gets deals which relevant to the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy` so in case of rain (detecting with the `Weather Company Data`), the gas station will offer an umbrella deal.
+Each time a customer is near one of the businesses above, he gets card deals relevant to that location.  In addition, depending on weather at that location (using the `Weather Company Data` service), the customer will gets deals relevant for the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy,` so that if it is raining (detected with the `Weather Company Data`), the gas station will offer an umbrella deal.
 
 ### Prerequisites
 1. [Installed Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
