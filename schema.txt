@@ -1,0 +1,1 @@
+{"features":{},"properties":{"bgColor":{"internalId":"1bcf877a-5662-4680-bcb6-4b6f96963ec6","name":"App Background Color","description":null,"defaultValue":"#4185DB","value":null},"dealsAdapterURL":{"internalId":"41464a31-5779-4286-8939-0775babb88fb","name":"Adapter Deals URL","description":null,"defaultValue":"/adapters/MarketingAdapter/deals/default","value":null}}}
