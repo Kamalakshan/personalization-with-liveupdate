@@ -40,6 +40,7 @@
 		D4B226501DAF713E00FCD77C /* Supermarket new the Madison Square Garden.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Supermarket new the Madison Square Garden.gpx"; sourceTree = "<group>"; };
 		D4B226511DAF716E00FCD77C /* Small supermarket near the New York Stock Exchange.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Small supermarket near the New York Stock Exchange.gpx"; sourceTree = "<group>"; };
 		D4B226521DAF71AF00FCD77C /* Gas station near Montauk, Long Island.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Gas station near Montauk, Long Island.gpx"; sourceTree = "<group>"; };
+		D4B226561DBFEBD700FCD77C /* MyChain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyChain.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 		D4A062351DAF536900E36C66 /* MyChain */ = {
 			isa = PBXGroup;
 			children = (
+				D4B226561DBFEBD700FCD77C /* MyChain.entitlements */,
 				D4A062481DAF53E500E36C66 /* AppDelegate.swift */,
 				D4A062491DAF53E500E36C66 /* CardsViewController.swift */,
 				D4A0624A1DAF53E500E36C66 /* BackgroundKolodaAnimator.swift */,
@@ -157,6 +159,11 @@
 						DevelopmentTeam = TN6YQNGLXP;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -365,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyChain/MyChain.entitlements;
 				DEVELOPMENT_TEAM = TN6YQNGLXP;
 				INFOPLIST_FILE = MyChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -382,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyChain/MyChain.entitlements;
 				DEVELOPMENT_TEAM = TN6YQNGLXP;
 				INFOPLIST_FILE = MyChain/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

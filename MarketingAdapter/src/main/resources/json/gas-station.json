@@ -1,6 +1,11 @@
 {
   "deals" : [
     {
+      "title": "Get a free umbrella",
+      "description": "Get a free umbrella when you fill up gas for more than 20$",
+      "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/umbrella1.png"
+    },
+    {
       "title": "Get a free car wash",
       "description": "Wash your car 10 times and get 1 wash for free",
       "imageUrl": "https://raw.githubusercontent.com/mfpdev/personalization-with-liveupdate/master/images/gas-station1.png"
