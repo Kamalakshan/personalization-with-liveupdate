@@ -22,13 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ClubMemberTypeSegmentResolver" />
         <module name="MarketingAdapter" />
         <module name="StoreCategorySegmentResolver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ClubMemberTypeSegmentResolver" target="1.5" />
       <module name="MarketingAdapter" target="1.6" />
       <module name="StoreCategorySegmentResolver" target="1.6" />
     </bytecodeTargetLevel>
