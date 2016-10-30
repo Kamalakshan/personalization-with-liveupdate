@@ -103,7 +103,10 @@ Each time a customer is near one of the businesses above, he gets deals relevant
 ### Using Analytics
 
   * After using the app for a while you can go to the [MobileFirst Analytics Console](http://localhost:9080/analytics/console/dashboard) and build your custom charts like the one below:
-  ![Scope Mapping](./images/analytics.png)
+  ![Analytics](./images/analytics.png)
+
+### Architecture
+![Architecture](./images/architecture.png)
 
 ### External dependencies frameworks used in the app
 
