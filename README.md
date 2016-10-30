@@ -11,6 +11,11 @@ The sample allows customers to get offers (The UX is like in the [Tinder] (https
 
 Each time a customer is near one of the businesses above, he gets deals relevant to that location.  In addition, depending on weather at that location (using the `Weather Company Data` service), the customer will gets deals relevant for the current weather. In the sample the `gas-station` has additional segment `gas-station-rainy,` so that if it is raining (detected with the `Weather Company Data`), the gas station will offer an umbrella deal.
 
+### Demo
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=zko9L9hCGZU" target="_blank"><img src="http://img.youtube.com/vi/zko9L9hCGZU/0.jpg" 
+alt="Mobile App Personalization with IBM MobileFirst Foundation 8.0" width="240" height="180" border="10" />
+</a>
+
 ### Prerequisites
 1. [Installed Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. Pre-installed IBM MobileFirst Platform [development environment](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/setting-up-your-development-environment/).
